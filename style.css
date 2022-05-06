@@ -49,6 +49,7 @@ html{
   margin-bottom: -45px;
   width: 35px;
   height: 35px;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,4 +62,5 @@ html{
 }
 .dado img{
   width: 15px;
+  margin-top: 4px;
 }
