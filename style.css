@@ -39,11 +39,12 @@ html{
 }
 .advice{
   color: var(--Neon-Green);
+  font-size: 1.6rem;
 }
 .paragraph{
   text-align: center;
   color: var(--Light-Cyan);
-  font-size: 16px;
+  font-size: 2rem;
 }
 .dado{
   position: absolute;

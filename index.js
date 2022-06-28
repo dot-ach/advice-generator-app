@@ -1,21 +1,17 @@
-const pAdvice = document.getElementById("advicePh");
+const nAdvice = document.getElementById("nAdvice");
 const pPrincipal = document.getElementById("text-advice")
 const button = document.getElementById("dado");
-const api = "https://api.adviceslip.com/advice/"
-const fetchData  = require("./utils/fetchData");
+const api = "https://api.adviceslip.com/advice"
 
 const logic = () =>{
-  const getElement = async (url_api) =>{
-    try{
-      const allElement = await fetchData(url_api);
-      return allElement;
-    }catch(error){
-      console.log(error)
-    }
-  }
-  getElement(api);
-  pPrincipal.innerText = `${allElement}`;
-  pAdvice.innerText = `Advice #${number}`
+  fetch(api)
+    .then(res => res.json())
+    .then(data => {
+      const id = data.slip.id;
+      const phrase = data.slip.advice;
+      nAdvice.innerText = 'Advice # '+ id;
+      pPrincipal.innerText = phrase;
+  });
 }
 
 button.addEventListener("click", logic);
